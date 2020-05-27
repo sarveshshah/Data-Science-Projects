@@ -1,0 +1,71 @@
+### Make sure you're connected to SEPTA's network physically, or with a VPN in case of remote. This will only work if the former is true.
+
+1. Setting up ODBC and SQL Work Bench
+
+    a. Download latest Workbench from here
+        https://www.sql-workbench.eu/Workbench-Build125-with-optional-libs.zip
+
+    b. Download and install latest compatible JRE and JDk from here 
+        https://www.oracle.com/java/technologies/javase-jre8-downloads.html
+        https://www.oracle.com/java/technologies/javase-downloads.html
+
+    c. Install latest AWS JDBC Driver  
+        https://docs.aws.amazon.com/redshift/latest/mgmt/configure-jdbc-connection.html#download-jdbc-driver
+
+    d. Open Workbench 
+        i. Set up a connection profile:
+            1. Select the Amazon Redshift Driver
+            2.  Copy the connection string and put it in URL
+                Copy the User and Password
+                Check Auto-commit (by default it will be unchecked)
+        
+        ii. For Python/R/Tableau etc
+            1. Use the from connection info for ODBC driver         
+
+            
+2. Setting up AWS CLI
+
+    a. Install AWS CLI
+        https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
+
+    b. Open a new Terminal/Powershell/CMD window
+        1. type: "aws configure" without quotes
+        2. Enter your 12-digit access ID
+        3. Enter your access key
+        4. Enter your region as "us-east-1" without quotes
+
+
+            
+3. Setting up S3
+
+    For Python:
+
+        1. Install boto3
+            pip install boto3
+
+        2. Run the following lines of code
+            import boto3
+            
+            # parameters
+            client = boto3.client('s3')
+            s3 = boto3.resource('s3')
+            bucket = septa-redshift-data-load
+            filepath = <insert the absolute path of the file that you wish to upload to s3>
+            key_name = <put what the file should be called in S3 bucket>
+            
+            # function to be called
+            s3.meta.client.upload_file(filename,bucket,key_name)
+
+        3. If you see no error, the file has been uploaded to S3
+
+4. Copying data to Redshift from S3 
+
+    a. Make sure the file has been uploaded in S3
+
+    b. If you have an exisiting table, use the table-name for the query. Note that the schema has to be same as the file in S3 
+       Create a table in your Redshift that has same schema as that of your S3 file
+
+    c. Run the following lines in your workbench as a query,
+        copy <table-name> from 's3://septa-redshift-data-load/load/<insert-the-key-name-from-abovr>'
+        credentials 'aws_access_key_id=<put-in-your-12-digit-access-key>;aws_secret_access_key='XXXXXXXXXX+XX/XXXXXXXXXXXXXXXXXXXXXXXX'
+        delimiter ',';

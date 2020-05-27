@@ -1,0 +1,111 @@
+2020-05-26 10:36:07,968: INFO: __main__: Running __main__
+2020-05-26 10:36:08,136: INFO: __main__: Uploading File to bucket septa-redshift-data-load
+2020-05-26 10:36:08,360: ERROR: __main__: Failed to upload C:\Users\asvh\Documents\Projects\Efficiency Review\Budget Reports\Departmental Spending.csv to septa-redshift-data-load/DSD test.csv: An error occurred (AccessDenied) when calling the CreateMultipartUpload operation: Access Denied
+2020-05-26 10:36:08,360: ERROR: __main__: Failed to upload C:\Users\asvh\Documents\Projects\Efficiency Review\Budget Reports\Departmental Spending.csv to septa-redshift-data-load/DSD test.csv: An error occurred (AccessDenied) when calling the CreateMultipartUpload operation: Access Denied
+Traceback (most recent call last):
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\boto3\s3\transfer.py", line 279, in upload_file
+    future.result()
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\s3transfer\futures.py", line 106, in result
+    return self._coordinator.result()
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\s3transfer\futures.py", line 265, in result
+    raise self._exception
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\s3transfer\tasks.py", line 126, in __call__
+    return self._execute_main(kwargs)
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\s3transfer\tasks.py", line 150, in _execute_main
+    return_value = self._main(**kwargs)
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\s3transfer\tasks.py", line 332, in _main
+    response = client.create_multipart_upload(
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\botocore\client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\botocore\client.py", line 635, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (AccessDenied) when calling the CreateMultipartUpload operation: Access Denied
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:/Users/asvh/Documents/Projects/AWS_Console/Test.py", line 30, in <module>
+    s3.meta.client.upload_file(filename,bucket,'DSD test.csv')
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\boto3\s3\inject.py", line 129, in upload_file
+    return transfer.upload_file(
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\boto3\s3\transfer.py", line 285, in upload_file
+    raise S3UploadFailedError(
+boto3.exceptions.S3UploadFailedError: Failed to upload C:\Users\asvh\Documents\Projects\Efficiency Review\Budget Reports\Departmental Spending.csv to septa-redshift-data-load/DSD test.csv: An error occurred (AccessDenied) when calling the CreateMultipartUpload operation: Access Denied
+2020-05-26 11:05:15,060: INFO: __main__: Running __main__
+2020-05-26 11:05:15,205: INFO: __main__: Uploading File to bucket septa-redshift-data-load
+2020-05-26 11:05:15,469: ERROR: __main__: Failed to upload C:\Users\asvh\Documents\Projects\Efficiency Review\Budget Reports\Departmental Spending.csv to septa-redshift-data-load/DSD test.csv: An error occurred (AccessDenied) when calling the CreateMultipartUpload operation: Access Denied
+2020-05-26 11:05:15,469: ERROR: __main__: Failed to upload C:\Users\asvh\Documents\Projects\Efficiency Review\Budget Reports\Departmental Spending.csv to septa-redshift-data-load/DSD test.csv: An error occurred (AccessDenied) when calling the CreateMultipartUpload operation: Access Denied
+Traceback (most recent call last):
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\boto3\s3\transfer.py", line 279, in upload_file
+    future.result()
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\s3transfer\futures.py", line 106, in result
+    return self._coordinator.result()
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\s3transfer\futures.py", line 265, in result
+    raise self._exception
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\s3transfer\tasks.py", line 126, in __call__
+    return self._execute_main(kwargs)
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\s3transfer\tasks.py", line 150, in _execute_main
+    return_value = self._main(**kwargs)
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\s3transfer\tasks.py", line 332, in _main
+    response = client.create_multipart_upload(
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\botocore\client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\botocore\client.py", line 635, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (AccessDenied) when calling the CreateMultipartUpload operation: Access Denied
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:/Users/asvh/Documents/Projects/AWS_Console/Test.py", line 30, in <module>
+    s3.meta.client.upload_file(filename,bucket,'DSD test.csv')
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\boto3\s3\inject.py", line 129, in upload_file
+    return transfer.upload_file(
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\boto3\s3\transfer.py", line 285, in upload_file
+    raise S3UploadFailedError(
+boto3.exceptions.S3UploadFailedError: Failed to upload C:\Users\asvh\Documents\Projects\Efficiency Review\Budget Reports\Departmental Spending.csv to septa-redshift-data-load/DSD test.csv: An error occurred (AccessDenied) when calling the CreateMultipartUpload operation: Access Denied
+2020-05-26 11:07:52,740: INFO: __main__: Running __main__
+2020-05-26 11:07:52,944: INFO: __main__: Uploading File to bucket septa-redshift-data-load
+2020-05-26 11:07:53,214: ERROR: __main__: Failed to upload C:\Users\asvh\Documents\Projects\Efficiency Review\Budget Reports\Departmental Spending.csv to septa-redshift-data-load/DSD test.csv: An error occurred (AccessDenied) when calling the CreateMultipartUpload operation: Access Denied
+2020-05-26 11:07:53,214: ERROR: __main__: Failed to upload C:\Users\asvh\Documents\Projects\Efficiency Review\Budget Reports\Departmental Spending.csv to septa-redshift-data-load/DSD test.csv: An error occurred (AccessDenied) when calling the CreateMultipartUpload operation: Access Denied
+Traceback (most recent call last):
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\boto3\s3\transfer.py", line 279, in upload_file
+    future.result()
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\s3transfer\futures.py", line 106, in result
+    return self._coordinator.result()
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\s3transfer\futures.py", line 265, in result
+    raise self._exception
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\s3transfer\tasks.py", line 126, in __call__
+    return self._execute_main(kwargs)
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\s3transfer\tasks.py", line 150, in _execute_main
+    return_value = self._main(**kwargs)
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\s3transfer\tasks.py", line 332, in _main
+    response = client.create_multipart_upload(
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\botocore\client.py", line 316, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\botocore\client.py", line 635, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.exceptions.ClientError: An error occurred (AccessDenied) when calling the CreateMultipartUpload operation: Access Denied
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:/Users/asvh/Documents/Projects/AWS_Console/Test.py", line 30, in <module>
+    s3.meta.client.upload_file(filename,bucket,'DSD test.csv')
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\boto3\s3\inject.py", line 129, in upload_file
+    return transfer.upload_file(
+  File "C:\Users\asvh\AppData\Local\Programs\Python\Python38-32\lib\site-packages\boto3\s3\transfer.py", line 285, in upload_file
+    raise S3UploadFailedError(
+boto3.exceptions.S3UploadFailedError: Failed to upload C:\Users\asvh\Documents\Projects\Efficiency Review\Budget Reports\Departmental Spending.csv to septa-redshift-data-load/DSD test.csv: An error occurred (AccessDenied) when calling the CreateMultipartUpload operation: Access Denied
+2020-05-26 12:06:53,171: INFO: __main__: Running __main__
+2020-05-26 12:06:53,446: ERROR: __main__: 'module' object is not callable
+2020-05-26 12:06:53,446: ERROR: __main__: 'module' object is not callable
+Traceback (most recent call last):
+  File "c:/Users/asvh/Documents/Projects/AWS_Console/Test.py", line 25, in <module>
+    filename = os.path(r'C:\Users\asvh\Documents\Projects\Efficiency Review\Budget Reports\Departmental Spending.csv')
+TypeError: 'module' object is not callable
+2020-05-26 12:08:48,480: INFO: __main__: Running __main__
+2020-05-26 12:08:48,663: INFO: __main__: Uploading File to bucket septa-redshift-data-load
+2020-05-26 12:21:43,263: INFO: __main__: Running __main__
+2020-05-26 12:23:56,307: INFO: __main__: Running __main__
+2020-05-26 12:24:13,966: INFO: __main__: Running __main__
